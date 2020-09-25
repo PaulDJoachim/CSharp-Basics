@@ -10,6 +10,11 @@ namespace CSharp_Basics
             Console.WriteLine("  / |");
             Console.WriteLine(" /  |");
             Console.WriteLine("/___|");
+
+            string characterName = "";
+            int characterAge;
+            characterAge = 35;
+
             Console.ReadLine();
         }
     }
