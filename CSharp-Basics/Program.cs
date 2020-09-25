@@ -6,14 +6,18 @@ namespace CSharp_Basics
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("   /|");
-            Console.WriteLine("  / |");
-            Console.WriteLine(" /  |");
-            Console.WriteLine("/___|");
+            //string phrase = "Hello World";
+            //char grade = 'A';
+            //int age = 30;
+            //double gpa = 3.2;
+            //bool happy = true;
 
-            string characterName = "";
-            int characterAge;
-            characterAge = 35;
+            Console.Write("Enter your name: ");
+            string userName = Console.ReadLine();
+            Console.Write("Enter your age: ");
+            string userAge = Console.ReadLine();
+            Console.WriteLine("Your name is " + userName + ". You are " + userAge + " years old.");
+            Console.ReadLine();
 
             Console.ReadLine();
         }
