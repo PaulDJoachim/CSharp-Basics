@@ -23,18 +23,33 @@ namespace CSharp_Basics
       string Draw_Char = "X";
       string[,] Draw_Game_Map = new string[239, 77];
 
+      //Game Array
+      var displayArray = new string[Console.WindowWidth, Console.WindowHeight];
+
       //Program:
       do
       {
-        //Console.Clear();
-        for (int i=0; i < Console.WindowHeight; i++)
+
+        for (int y=0; y < Console.WindowHeight; y++)
         {
-          for (int j=0; j < Console.WindowWidth; j++)
+          for (int x=0; x < Console.WindowWidth; x++)
           {
-          Console.Write(".");
+          displayArray[x,y] = ".";
+          }
+        }
+
+        displayArray[5, 5] = "@";
+
+        for (int y=0; y < displayArray.GetLength(1); y++)
+        {
+          for (int x=0; x < displayArray.GetLength(0); x++)
+          {
+            Console.Write(displayArray[x, y]);
           }
           Console.WriteLine();
         }
+
+
         Console.ReadLine();
       } while (Gameover == 0);
 
