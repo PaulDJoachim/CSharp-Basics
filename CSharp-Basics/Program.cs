@@ -8,19 +8,16 @@ namespace CSharp_Basics
     {
 
       // Settings
-      Console.BufferHeight = 400;
-      Console.BufferWidth = 400;
       Console.SetWindowSize(150,50);
+      Console.BufferWidth = 151;
+      Console.BufferHeight = 51;
 
       //Ints:
-      int Char_Health_Full = 100;
-      int Char_Health_Current = 100;
-      int score = 0;
       int Gameover = 0;
+      int width = Console.WindowWidth;
 
       // Randoms:
       Random Random = new Random();
-
 
       //Strings:
       string Draw_Char = "X";
@@ -30,7 +27,15 @@ namespace CSharp_Basics
       do
       {
         //Console.Clear();
-        Console.Write('t');
+        for (int i=0; i < Console.WindowHeight; i++)
+        {
+          for (int j=0; j < Console.WindowWidth; j++)
+          {
+          Console.Write(".");
+          }
+          Console.WriteLine();
+        }
+        Console.ReadLine();
       } while (Gameover == 0);
 
     }
