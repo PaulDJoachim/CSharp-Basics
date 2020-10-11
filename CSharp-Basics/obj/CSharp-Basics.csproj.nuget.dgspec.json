@@ -38,21 +38,13 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "Microsoft.Win32.SystemEvents": {
+            "MonoGame.Framework.DesktopGL": {
               "target": "Package",
-              "version": "[4.7.0, )"
+              "version": "[3.8.0.1641, )"
             },
-            "RLNET": {
+            "SadConsole": {
               "target": "Package",
-              "version": "[1.0.6, )"
-            },
-            "RogueSharp": {
-              "target": "Package",
-              "version": "[4.2.0, )"
-            },
-            "System.Drawing.Common": {
-              "target": "Package",
-              "version": "[4.7.0, )"
+              "version": "[8.99.3, )"
             }
           },
           "imports": [
