@@ -3,12 +3,13 @@ using SadConsole;
 using Microsoft.Xna.Framework;
 using Console = SadConsole.Console;
 
-namespace SadConsoleExample
+namespace SadConsoleGame
 {
   class Game
   {
     static void Main()
     {
+
       // Setup the engine and create the main window.
       SadConsole.Game.Create(80, 25);
 
@@ -23,9 +24,16 @@ namespace SadConsoleExample
     static void Init()
     {
       var console = new Console(80, 25);
-      console.FillWithRandomGarbage();
-      console.Fill(new Rectangle(3, 3, 23, 3), Color.Violet, Color.Black, 0, 0);
-      console.Print(4, 4, "Hello from SadConsole");
+
+      // New code starts here
+      console.SetBackground(2, 2, Color.DarkGray);
+      console.SetGlyph(2, 2, 1);
+      console.SetForeground(2, 2, Color.DarkBlue);
+      console.SetMirror(2, 2, Microsoft.Xna.Framework.Graphics.SpriteEffects.FlipVertically);
+
+      console.DrawLine(new Point(2, 4), new Point(20, 6), Color.BlueViolet, Color.White, 4);
+      console.DrawCircle(new Rectangle(20, 10, 16, 16), new Cell(Color.BlueViolet, Color.White, 4));
+
 
       SadConsole.Global.CurrentScreen = console;
     }
