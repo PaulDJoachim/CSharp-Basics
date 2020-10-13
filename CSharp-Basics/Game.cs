@@ -23,17 +23,14 @@ namespace SadConsoleGame
 
     static void Init()
     {
-      var console = new Console(80, 25);
+      // font setup
+      var fontMaster = SadConsole.Global.LoadFont("../fonts/qbicfeet_10x10.font");
+      var normalSizedFont = fontMaster.GetFont(SadConsole.Font.FontSizes.Two);
 
-      // New code starts here
-      console.SetBackground(2, 2, Color.DarkGray);
-      console.SetGlyph(2, 2, 1);
-      console.SetForeground(2, 2, Color.DarkBlue);
-      console.SetMirror(2, 2, Microsoft.Xna.Framework.Graphics.SpriteEffects.FlipVertically);
-
-      console.DrawLine(new Point(2, 4), new Point(20, 6), Color.BlueViolet, Color.White, 4);
-      console.DrawCircle(new Rectangle(20, 10, 16, 16), new Cell(Color.BlueViolet, Color.White, 4));
-
+      var console = new Console(80, 25, normalSizedFont);
+      console.IsFocused = true;
+      console.Cursor.IsVisible = true;
+      console.Components.Add(new MyKeyboardComponent());
 
       SadConsole.Global.CurrentScreen = console;
     }
