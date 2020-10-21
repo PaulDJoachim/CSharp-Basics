@@ -10,7 +10,6 @@ C:\Users\Paul\source\repos\CSharp-Basics\CSharp-Basics\obj\Debug\netcoreapp3.1\C
 C:\Users\Paul\source\repos\CSharp-Basics\CSharp-Basics\obj\Debug\netcoreapp3.1\CSharp-Basics.dll
 C:\Users\Paul\source\repos\CSharp-Basics\CSharp-Basics\obj\Debug\netcoreapp3.1\CSharp-Basics.pdb
 C:\Users\Paul\source\repos\CSharp-Basics\CSharp-Basics\obj\Debug\netcoreapp3.1\CSharp-Basics.genruntimeconfig.cache
-C:\Users\Paul\source\repos\CSharp-Basics\CSharp-Basics\bin\Debug\netcoreapp3.1\terminal8x8.png
 C:\Users\Paul\source\repos\CSharp-Basics\CSharp-Basics\bin\Debug\netcoreapp3.1\MonoGame.Framework.dll
 C:\Users\Paul\source\repos\CSharp-Basics\CSharp-Basics\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libSDL2-2.0.so.0
 C:\Users\Paul\source\repos\CSharp-Basics\CSharp-Basics\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libopenal.so.1

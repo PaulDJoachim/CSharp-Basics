@@ -24,15 +24,12 @@ namespace SadConsoleGame
     static void Init()
     {
       // font setup
-      var fontMaster = SadConsole.Global.LoadFont("../fonts/qbicfeet_10x10.font");
-      var normalSizedFont = fontMaster.GetFont(SadConsole.Font.FontSizes.Two);
+      var fontMaster = SadConsole.Global.LoadFont("../fonts/terminal8x8.font");
+      var normalSizedFont = fontMaster.GetFont(SadConsole.Font.FontSizes.One);
 
-      var console = new Console(80, 25, normalSizedFont);
-      console.IsFocused = true;
-      console.Cursor.IsVisible = true;
-      console.Components.Add(new MyKeyboardComponent());
+      var console = new Console(80, 50, normalSizedFont);
+      Global.CurrentScreen = new MapScreen();
 
-      SadConsole.Global.CurrentScreen = console;
     }
   }
 }
