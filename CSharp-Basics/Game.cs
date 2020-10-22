@@ -11,7 +11,7 @@ namespace SadConsoleGame
     {
 
       // Setup the engine and create the main window.
-      SadConsole.Game.Create(80, 25);
+      SadConsole.Game.Create("../fonts/terminal8x8.font", 120, 75);
 
       // Hook the start event so we can add consoles to the system.
       SadConsole.Game.OnInitialize = Init;
@@ -23,13 +23,10 @@ namespace SadConsoleGame
 
     static void Init()
     {
-      // font setup
-      var fontMaster = SadConsole.Global.LoadFont("../fonts/terminal8x8.font");
-      var normalSizedFont = fontMaster.GetFont(SadConsole.Font.FontSizes.One);
-
-      var console = new Console(80, 50, normalSizedFont);
-      Global.CurrentScreen = new MapScreen();
-
+      var blister = new MapScreen();
+      Global.CurrentScreen = blister.MapConsole;
+      blister.MapConsole.Cursor.Position = new Point(0, 2);
+      SadConsole.Global.FocusedConsoles.Set(blister.MapConsole);
     }
   }
 }
