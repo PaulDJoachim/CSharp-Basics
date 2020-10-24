@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using SadConsole;
 using Microsoft.Xna.Framework;
+using SadConsole.Input;
+using SadConsole.Components;
 
 // because there is also a console class within the "System" namespace, we define Console to default with the SadConsole namespace
 using Console = SadConsole.Console;
@@ -12,6 +14,8 @@ namespace SadConsoleGame
   // The colon after the class name designates inheritance from ContainerConsole
   class MapScreen : ContainerConsole
   {
+
+
     // This is a get-only automatic property
     public Console MapConsole { get; }
 
@@ -20,6 +24,8 @@ namespace SadConsoleGame
 
     // This is a 2-dimensional private point field
     private Point _playerPosition;
+    // This is a saved glyph of what the player is standing on top of
+    private Cell _playerPositionMapGlyph;
 
     // This is the public point property
     public Point PlayerPosition
@@ -52,14 +58,37 @@ namespace SadConsoleGame
       MapConsole = new Console(mapConsoleWidth, mapConsoleHeight, normalSizedFont);
       MapConsole.DrawBox(new Microsoft.Xna.Framework.Rectangle(0, 0, MapConsole.Width, MapConsole.Height), new Cell(Color.White, Color.DarkGray, 0));
       MapConsole.Parent = this;
-
+      MapConsole.DrawBox(new Microsoft.Xna.Framework.Rectangle(10, 10, 5, 5), new Cell(Color.White, Color.DarkGray, 0));
       // Setup player
       PlayerGlyph = new Cell(Color.White, Color.Black, 1);
       _playerPosition = new Point(4, 4);
       PlayerGlyph.CopyAppearanceTo(MapConsole[_playerPosition.X, _playerPosition.Y]);
 
-
       MapConsole.Parent = this;
     }
+
+    public override bool ProcessKeyboard(Keyboard info)
+    {
+      Point newPlayerPosition = PlayerPosition;
+
+      if (info.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Up))
+        newPlayerPosition += SadConsole.Directions.North;
+      else if (info.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Down))
+        newPlayerPosition += SadConsole.Directions.South;
+
+      if (info.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Left))
+        newPlayerPosition += SadConsole.Directions.West;
+      else if (info.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Right))
+        newPlayerPosition += SadConsole.Directions.East;
+
+      if (newPlayerPosition != PlayerPosition)
+      {
+        PlayerPosition = newPlayerPosition;
+        return true;
+      }
+
+      return false;
+    }
+
   }
 }
