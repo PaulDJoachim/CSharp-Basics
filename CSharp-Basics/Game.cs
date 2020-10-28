@@ -27,6 +27,8 @@ namespace SadConsoleGame
       // set the currect screen to be "Focused" so keyboard input will be sent to it.
       Global.CurrentScreen.IsFocused = true;
 
+      var biggy = new WorldGen();
+
     }
   }
 }

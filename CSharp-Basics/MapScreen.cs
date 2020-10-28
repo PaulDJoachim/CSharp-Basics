@@ -57,14 +57,16 @@ namespace SadConsoleGame
       // Setup map
       MapConsole = new Console(mapConsoleWidth, mapConsoleHeight, normalSizedFont);
       MapConsole.DrawBox(new Microsoft.Xna.Framework.Rectangle(0, 0, MapConsole.Width, MapConsole.Height), new Cell(Color.White, Color.DarkGray, 0));
+
+
       MapConsole.Parent = this;
-      MapConsole.DrawBox(new Microsoft.Xna.Framework.Rectangle(10, 10, 5, 5), new Cell(Color.White, Color.DarkGray, 0));
+      
+      
       // Setup player
       PlayerGlyph = new Cell(Color.White, Color.Black, 1);
       _playerPosition = new Point(4, 4);
       PlayerGlyph.CopyAppearanceTo(MapConsole[_playerPosition.X, _playerPosition.Y]);
 
-      MapConsole.Parent = this;
     }
 
     public override bool ProcessKeyboard(Keyboard info)
